@@ -30,5 +30,12 @@ The client supports:
 
 Use [ExtractLinks] to discover same-domain URLs from scraped content,
 and [Client.Crawl] for recursive site crawling with BFS.
+
+# Account Limits
+
+[Client.Info] queries Scrape.do's /info endpoint and returns an
+[AccountInfo] describing the active concurrency cap, the monthly request
+quota, and how much of each remains. Use it to size per-run concurrency
+safely or to short-circuit a batch when the monthly quota is exhausted.
 */
 package scrapedo

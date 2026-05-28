@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **SDK `Client.Info()`**: New `pkg/scrapedo.Client.Info(ctx) (*AccountInfo, error)` method that calls Scrape.do's `GET /info` endpoint and returns the account's active concurrency cap (`ConcurrentRequest`), monthly request quota (`MaxMonthlyRequest`), and remaining counters. Enables consumers to size per-run fan-out dynamically against the live account limit and to short-circuit batches when the monthly quota is exhausted. Non-200 responses wrap `ErrAPI` so callers can branch with `errors.Is`.
+- **SDK `AccountInfo`**: Exported struct mirroring the `/info` JSON shape exactly (no struct tags) — `IsActive`, `ConcurrentRequest`, `MaxMonthlyRequest`, `RemainingConcurrentRequest`, `RemainingMonthlyRequest`.
+
 ## [0.2.0] - 2026-03-21
 
 ### Added

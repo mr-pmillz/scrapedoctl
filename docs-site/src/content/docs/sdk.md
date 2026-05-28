@@ -287,6 +287,82 @@ if err := os.WriteFile("article.html", []byte(body), 0o644); err != nil {
 }
 ```
 
+## Check account limits and quota
+
+`client.Info` calls Scrape.do's `GET /info` endpoint and returns the account's active concurrency cap, monthly request quota, and how much of each remains. Useful for sizing per-run concurrency against the live account limit or short-circuiting a batch when the monthly quota is exhausted.
+
+```go
+info, err := client.Info(ctx)
+if err != nil {
+    log.Fatalf("info: %v", err)
+}
+
+fmt.Printf("active=%v concurrent=%d remaining=%d/%d\n",
+    info.IsActive,
+    info.ConcurrentRequest,
+    info.RemainingMonthlyRequest,
+    info.MaxMonthlyRequest)
+```
+
+`AccountInfo` mirrors the upstream JSON exactly:
+
+```go
+type AccountInfo struct {
+    IsActive                   bool
+    ConcurrentRequest          int  // max simultaneous in-flight requests for the token
+    MaxMonthlyRequest          int  // monthly request quota
+    RemainingConcurrentRequest int  // concurrent slots not currently in use
+    RemainingMonthlyRequest    int  // requests remaining for the current month
+}
+```
+
+### Size per-run concurrency dynamically
+
+A common pattern is to fan out scrapes through an `errgroup` whose limit is derived from `info.ConcurrentRequest`. Halving it leaves headroom for other processes sharing the same token; pinning a small ceiling avoids hogging a high-tier account's whole budget on a single run.
+
+```go
+import "golang.org/x/sync/errgroup"
+
+const (
+    minConcurrency = 5
+    maxConcurrency = 10
+)
+
+info, err := client.Info(ctx)
+if err != nil {
+    log.Fatalf("info: %v", err)
+}
+
+limit := info.ConcurrentRequest / 2
+switch {
+case limit < minConcurrency:
+    limit = minConcurrency
+case limit > maxConcurrency:
+    limit = maxConcurrency
+}
+
+g, gctx := errgroup.WithContext(ctx)
+g.SetLimit(limit)
+for _, u := range urls {
+    u := u
+    g.Go(func() error {
+        _, err := client.Scrape(gctx, scrapedo.ScrapeRequest{URL: u, Super: true})
+        return err
+    })
+}
+if err := g.Wait(); err != nil {
+    log.Fatalf("scrape batch: %v", err)
+}
+```
+
+Non-200 responses from `/info` wrap `ErrAPI`:
+
+```go
+if errors.Is(err, scrapedo.ErrAPI) {
+    // 401 (bad token), 5xx (Scrape.do outage), etc.
+}
+```
+
 ## Persistent cache (optional)
 
 The CLI ships an SQLite-backed cache. To get the same behaviour in the SDK, pass any type that satisfies the `Cacher` interface to `client.SetCache`:
