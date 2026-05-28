@@ -1,4 +1,7 @@
-# 03 - Usage Guide
+---
+title: Usage Guide
+description: Scrape, search, manage cache, configure providers, and run the interactive REPL.
+---
 
 ## Core Scrape Command
 

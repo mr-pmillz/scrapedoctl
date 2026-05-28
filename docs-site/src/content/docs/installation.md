@@ -1,4 +1,7 @@
-# 02 - Installation & Setup
+---
+title: Installation & Setup
+description: Build scrapedoctl from source, run the interactive installer, and wire up shell completion.
+---
 
 ## Prerequisites
 

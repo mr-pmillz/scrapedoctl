@@ -41,10 +41,9 @@
 
 ## 📖 Documentation
 
-Detailed guides are available in multiple languages:
+The full docs site is published at **<https://mr-pmillz.github.io/scrapedoctl/>** (English and Русский).
 
-*   🇬🇧 **[English Documentation](./docs/en/00-index.md)**
-*   🇷🇺 **[Русская документация](./docs/ru/00-index.md)**
+The source lives in [`docs-site/`](./docs-site/) and is built with [Astro Starlight](https://starlight.astro.build/). See [`docs-site/README.md`](./docs-site/README.md) for local development instructions.
 
 ---
 

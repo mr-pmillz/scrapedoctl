@@ -1,0 +1,36 @@
+---
+title: scrapedoctl
+description: Профессиональная CLI-утилита и сервер MCP, превращающий веб в LLM-готовый Markdown для AI-агентов.
+template: splash
+hero:
+  tagline: CLI и MCP-сервер, превращающий веб в Markdown, готовый для LLM — для AI-агентов, с надёжным кэшем и REPL в стиле Cisco.
+  image:
+    file: ../../../assets/logo.svg
+  actions:
+    - text: Начать
+      link: /scrapedoctl/ru/introduction/
+      icon: right-arrow
+      variant: primary
+    - text: GitHub
+      link: https://github.com/mr-pmillz/scrapedoctl
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Что внутри
+
+<CardGrid stagger>
+  <Card title="Интерактивный REPL" icon="terminal">
+    Дерево команд в стиле Cisco с сокращениями, контекстной помощью (`?`) и автодополнением.
+  </Card>
+  <Card title="Мультипровайдерный поиск" icon="magnifier">
+    Единый интерфейс к Scrape.do, ScraperAPI, SerpAPI (7 движков) и exec-плагинам.
+  </Card>
+  <Card title="Персистентный кэш" icon="rocket">
+    Встроенный SQLite-кэш с историей версий — экономит токены и переживает перезапуски.
+  </Card>
+  <Card title="Готов к MCP" icon="puzzle">
+    Экспонирует инструменты `scrape_url` и `web_search` любому MCP-совместимому клиенту.
+  </Card>
+</CardGrid>

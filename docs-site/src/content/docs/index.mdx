@@ -1,0 +1,36 @@
+---
+title: scrapedoctl
+description: A professional-grade CLI tool and Model Context Protocol (MCP) server that bridges AI agents and the web via the Scrape.do API.
+template: splash
+hero:
+  tagline: A CLI and MCP server that turns the web into LLM-ready Markdown — built for AI agents, AT&T-grade caching, and a Cisco-style REPL.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Get started
+      link: /scrapedoctl/introduction/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/mr-pmillz/scrapedoctl
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What's inside
+
+<CardGrid stagger>
+  <Card title="Interactive REPL" icon="terminal">
+    Cisco-style command tree with prefix matching, context help (`?`), and tab completion.
+  </Card>
+  <Card title="Multi-provider search" icon="magnifier">
+    Unified search across Scrape.do, ScraperAPI, SerpAPI (7 engines), and custom exec plugins.
+  </Card>
+  <Card title="Persistent cache" icon="rocket">
+    Built-in SQLite cache with versioned history saves tokens and survives reruns.
+  </Card>
+  <Card title="MCP-ready" icon="puzzle">
+    Exposes `scrape_url` and `web_search` tools to any MCP-compatible AI client.
+  </Card>
+</CardGrid>

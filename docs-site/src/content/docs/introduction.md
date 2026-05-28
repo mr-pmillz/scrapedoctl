@@ -1,4 +1,7 @@
-# 01 - Introduction
+---
+title: Introduction
+description: What scrapedoctl is, why it exists, and its key features.
+---
 
 `scrapedoctl` is a professional-grade CLI tool and Model Context Protocol (MCP) server designed to bridge the gap between AI agents and the web. By utilizing the [Scrape.do](https://scrape.do/) API, it provides a robust, anti-bot-bypassing, and JS-rendering capable scraping engine that is both human and machine friendly.
 

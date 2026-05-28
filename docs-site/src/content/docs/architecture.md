@@ -1,4 +1,7 @@
-# 04 - Architecture & Design
+---
+title: Architecture & Design
+description: High-level system overview, persistence layer, MCP integration, and the multi-provider search router.
+---
 
 ## High-level Overview
 
