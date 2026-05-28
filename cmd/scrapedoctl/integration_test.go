@@ -15,10 +15,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/cache"
-	"github.com/ioplane/scrapedoctl/internal/install"
-	"github.com/ioplane/scrapedoctl/internal/version"
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/internal/cache"
+	"github.com/mr-pmillz/scrapedoctl/internal/install"
+	"github.com/mr-pmillz/scrapedoctl/internal/version"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 func TestCLI_Integration(t *testing.T) {
@@ -823,7 +823,7 @@ func newMockGitHubServer(t *testing.T, tagName string) *httptest.Server {
 		w.Header().Set("Content-Type", "application/json")
 		resp := map[string]string{
 			"tag_name": tagName,
-			"html_url": "https://github.com/ioplane/scrapedoctl/releases/tag/" + tagName,
+			"html_url": "https://github.com/mr-pmillz/scrapedoctl/releases/tag/" + tagName,
 		}
 		_ = json.NewEncoder(w).Encode(resp)
 	}))

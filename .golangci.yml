@@ -16,7 +16,7 @@ formatters:
   settings:
     goimports:
       local-prefixes:
-        - github.com/ioplane/scrapedoctl
+        - github.com/mr-pmillz/scrapedoctl
     golines:
       max-len: 120
 

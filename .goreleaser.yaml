@@ -23,9 +23,9 @@ builds:
     ldflags:
       - >-
         -s -w
-        -X github.com/ioplane/scrapedoctl/internal/version.Version={{.Version}}
-        -X github.com/ioplane/scrapedoctl/internal/version.GitCommit={{.ShortCommit}}
-        -X github.com/ioplane/scrapedoctl/internal/version.BuildDate={{.Date}}
+        -X github.com/mr-pmillz/scrapedoctl/internal/version.Version={{.Version}}
+        -X github.com/mr-pmillz/scrapedoctl/internal/version.GitCommit={{.ShortCommit}}
+        -X github.com/mr-pmillz/scrapedoctl/internal/version.BuildDate={{.Date}}
 
 upx:
   - enabled: true
@@ -40,7 +40,7 @@ nfpms:
     file_name_template: >-
       {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_
       {{- if eq .Arch "amd64" }}x86_64{{ else }}{{ .Arch }}{{ end }}
-    vendor: ioplane
+    vendor: mr-pmillz
     maintainer: Pavel Lavrukhin <46395539+dantte-lp@users.noreply.github.com>
     description: Scrape.do CLI & MCP Server
     license: MIT

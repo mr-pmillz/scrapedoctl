@@ -12,18 +12,18 @@ Download the latest release:
 
 ```bash
 # Linux (amd64)
-curl -fsSL https://github.com/ioplane/scrapedoctl/releases/latest/download/scrapedoctl_Linux_x86_64.tar.gz | tar xz
+curl -fsSL https://github.com/mr-pmillz/scrapedoctl/releases/latest/download/scrapedoctl_Linux_x86_64.tar.gz | tar xz
 sudo mv scrapedoctl /usr/local/bin/
 
 # macOS (Apple Silicon)
-curl -fsSL https://github.com/ioplane/scrapedoctl/releases/latest/download/scrapedoctl_Darwin_arm64.tar.gz | tar xz
+curl -fsSL https://github.com/mr-pmillz/scrapedoctl/releases/latest/download/scrapedoctl_Darwin_arm64.tar.gz | tar xz
 sudo mv scrapedoctl /usr/local/bin/
 ```
 
 Or install from Go:
 
 ```bash
-go install github.com/ioplane/scrapedoctl/cmd/scrapedoctl@latest
+go install github.com/mr-pmillz/scrapedoctl/cmd/scrapedoctl@latest
 ```
 
 ## Setup

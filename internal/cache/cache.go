@@ -21,9 +21,9 @@ import (
 	// Import the sqlite driver.
 	_ "modernc.org/sqlite"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
-	"github.com/ioplane/scrapedoctl/internal/db"
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/db"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
 )
 
 // Store implements the persistent caching logic.

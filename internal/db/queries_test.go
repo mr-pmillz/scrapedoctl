@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 	_ "modernc.org/sqlite"
 
-	"github.com/ioplane/scrapedoctl/internal/db"
+	"github.com/mr-pmillz/scrapedoctl/internal/db"
 )
 
 func setupTestDB(t *testing.T) (*sql.DB, *db.Queries) {

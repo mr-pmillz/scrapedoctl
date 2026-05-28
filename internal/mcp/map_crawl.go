@@ -7,7 +7,7 @@ import (
 
 	mcpsdk "github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
 )
 
 // mapToolArgs defines arguments for the map_urls tool.

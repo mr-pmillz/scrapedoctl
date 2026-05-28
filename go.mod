@@ -1,4 +1,4 @@
-module github.com/ioplane/scrapedoctl
+module github.com/mr-pmillz/scrapedoctl
 
 go 1.26
 

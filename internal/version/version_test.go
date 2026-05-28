@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/version"
+	"github.com/mr-pmillz/scrapedoctl/internal/version"
 )
 
 func TestInfo(t *testing.T) {
@@ -27,7 +27,7 @@ func TestCheckLatest_NewerVersion(t *testing.T) {
 		w.Header().Set("Content-Type", "application/json")
 		_ = json.NewEncoder(w).Encode(map[string]string{
 			"tag_name": "v99.0.0",
-			"html_url": "https://github.com/ioplane/scrapedoctl/releases/tag/v99.0.0",
+			"html_url": "https://github.com/mr-pmillz/scrapedoctl/releases/tag/v99.0.0",
 		})
 	}))
 	defer srv.Close()
@@ -47,7 +47,7 @@ func TestCheckLatest_SameVersion(t *testing.T) {
 		w.Header().Set("Content-Type", "application/json")
 		_ = json.NewEncoder(w).Encode(map[string]string{
 			"tag_name": "v" + version.Version,
-			"html_url": "https://github.com/ioplane/scrapedoctl/releases",
+			"html_url": "https://github.com/mr-pmillz/scrapedoctl/releases",
 		})
 	}))
 	defer srv.Close()
@@ -92,9 +92,9 @@ func TestCheckLatest_InvalidJSON(t *testing.T) {
 
 func TestConstants(t *testing.T) {
 	t.Parallel()
-	assert.Equal(t, "ioplane", version.RepoOwner)
+	assert.Equal(t, "mr-pmillz", version.RepoOwner)
 	assert.Equal(t, "scrapedoctl", version.RepoName)
-	assert.Contains(t, version.RepoURL, "github.com/ioplane/scrapedoctl")
+	assert.Contains(t, version.RepoURL, "github.com/mr-pmillz/scrapedoctl")
 	assert.Contains(t, version.ReleasesURL, "/releases")
 }
 

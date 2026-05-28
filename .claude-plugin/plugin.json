@@ -3,10 +3,10 @@
   "description": "Web scraping, multi-engine search, URL mapping, and site crawling for AI agents. Powered by Scrape.do with SerpAPI, ScraperAPI, and custom exec plugin support.",
   "version": "0.2.1",
   "author": {
-    "name": "ioplane"
+    "name": "mr-pmillz"
   },
-  "homepage": "https://github.com/ioplane/scrapedoctl",
-  "repository": "https://github.com/ioplane/scrapedoctl",
+  "homepage": "https://github.com/mr-pmillz/scrapedoctl",
+  "repository": "https://github.com/mr-pmillz/scrapedoctl",
   "license": "MIT",
   "skills": [
     "./skills/scrape-do"

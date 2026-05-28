@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/cache"
-	"github.com/ioplane/scrapedoctl/internal/config"
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/internal/cache"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
 )
 
 func TestCache(t *testing.T) {

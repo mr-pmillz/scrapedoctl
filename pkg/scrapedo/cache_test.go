@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
 )
 
 type MockCacher struct {

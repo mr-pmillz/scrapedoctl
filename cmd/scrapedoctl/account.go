@@ -10,7 +10,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 func newAccountCmd() *cobra.Command {

@@ -21,7 +21,7 @@ var (
 
 const (
 	// RepoOwner is the GitHub repository owner.
-	RepoOwner = "ioplane"
+	RepoOwner = "mr-pmillz"
 	// RepoName is the GitHub repository name.
 	RepoName = "scrapedoctl"
 	// RepoURL is the GitHub repository URL.

@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/install"
+	"github.com/mr-pmillz/scrapedoctl/internal/install"
 )
 
 func TestConfigureAgents(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
 )
 
 func TestRootCmd_AutoSetupTrigger(t *testing.T) {

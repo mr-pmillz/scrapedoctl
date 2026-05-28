@@ -12,7 +12,7 @@ To build the `scrapedoctl` binary locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/ioplane/scrapedoctl.git
+git clone https://github.com/mr-pmillz/scrapedoctl.git
 cd scrapedoctl
 
 # Build the binary

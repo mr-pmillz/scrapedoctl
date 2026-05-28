@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ioplane/scrapedoctl/internal/version"
+	"github.com/mr-pmillz/scrapedoctl/internal/version"
 )
 
 func newVersionCmd() *cobra.Command {

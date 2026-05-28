@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ioplane/scrapedoctl/internal/cache"
+	"github.com/mr-pmillz/scrapedoctl/internal/cache"
 )
 
 func newUsageCmd() *cobra.Command {

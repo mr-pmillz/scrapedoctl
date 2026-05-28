@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	"github.com/ioplane/scrapedoctl/internal/version"
+	"github.com/mr-pmillz/scrapedoctl/internal/version"
 )
 
 type CLIMetadata struct {

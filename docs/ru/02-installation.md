@@ -12,7 +12,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/ioplane/scrapedoctl.git
+git clone https://github.com/mr-pmillz/scrapedoctl.git
 cd scrapedoctl
 
 # Соберите бинарник

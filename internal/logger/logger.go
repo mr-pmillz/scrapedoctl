@@ -11,7 +11,7 @@ import (
 
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
 )
 
 // Init initializes the global logger based on the provided configuration.

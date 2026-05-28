@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
-	"github.com/ioplane/scrapedoctl/internal/logger"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/logger"
 )
 
 func TestInit(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 func TestResponse_JSON(t *testing.T) {

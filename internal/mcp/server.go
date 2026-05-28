@@ -10,9 +10,9 @@ import (
 
 	mcpsdk "github.com/modelcontextprotocol/go-sdk/mcp"
 
-	"github.com/ioplane/scrapedoctl/internal/version"
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/internal/version"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 // UsageRecorder records API usage for local analytics.

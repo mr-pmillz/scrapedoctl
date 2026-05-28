@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
-	"github.com/ioplane/scrapedoctl/internal/logger"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/logger"
 )
 
 func TestInit_Branches(t *testing.T) {

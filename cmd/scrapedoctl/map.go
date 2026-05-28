@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
 )
 
 type mapFlags struct {

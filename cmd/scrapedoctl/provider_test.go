@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
 )
 
 func setupTestConfig(t *testing.T) {

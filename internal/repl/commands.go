@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ioplane/scrapedoctl/internal/cache"
-	"github.com/ioplane/scrapedoctl/internal/config"
-	"github.com/ioplane/scrapedoctl/internal/version"
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/internal/cache"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/version"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 // Command represents a REPL command.

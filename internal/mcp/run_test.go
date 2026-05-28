@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/mcp"
-	"github.com/ioplane/scrapedoctl/pkg/scrapedo"
+	"github.com/mr-pmillz/scrapedoctl/internal/mcp"
+	"github.com/mr-pmillz/scrapedoctl/pkg/scrapedo"
 )
 
 func TestRunServer_ContextCancel(t *testing.T) {

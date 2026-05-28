@@ -8,7 +8,7 @@ import (
 	"github.com/charmbracelet/huh"
 	"github.com/spf13/cobra"
 
-	"github.com/ioplane/scrapedoctl/internal/install"
+	"github.com/mr-pmillz/scrapedoctl/internal/install"
 )
 
 func newInstallCmd() *cobra.Command {

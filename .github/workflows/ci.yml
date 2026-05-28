@@ -13,14 +13,14 @@ jobs:
     permissions:
       contents: read
     container:
-      image: golang:1.26-trixie
+      image: index.docker.io/library/golang@sha256:0f6b034c99663ea8957e7dae99124e37374cbe7fcb5b5646f19b185f8f976279 # ratchet:golang:1.26-trixie
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Cache Go modules
-        uses: actions/cache@v4
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # ratchet:actions/cache@v5
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -32,9 +32,9 @@ jobs:
           GIT_COMMIT="${GITHUB_SHA::8}"
           BUILD_DATE="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           LDFLAGS="-s -w \
-            -X github.com/ioplane/scrapedoctl/internal/version.Version=${VERSION} \
-            -X github.com/ioplane/scrapedoctl/internal/version.GitCommit=${GIT_COMMIT} \
-            -X github.com/ioplane/scrapedoctl/internal/version.BuildDate=${BUILD_DATE}"
+            -X github.com/mr-pmillz/scrapedoctl/internal/version.Version=${VERSION} \
+            -X github.com/mr-pmillz/scrapedoctl/internal/version.GitCommit=${GIT_COMMIT} \
+            -X github.com/mr-pmillz/scrapedoctl/internal/version.BuildDate=${BUILD_DATE}"
           CGO_ENABLED=0 go build -buildvcs=false -ldflags="${LDFLAGS}" -o scrapedoctl ./cmd/scrapedoctl
 
       - name: Compress binary with UPX
@@ -46,7 +46,7 @@ jobs:
           ls -lh scrapedoctl
 
       - name: Upload binary artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # ratchet:actions/upload-artifact@v7
         with:
           name: scrapedoctl-linux-amd64
           path: scrapedoctl
@@ -66,7 +66,7 @@ jobs:
 
       - name: Upload test reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # ratchet:actions/upload-artifact@v7
         with:
           name: test-reports
           path: |
@@ -75,7 +75,7 @@ jobs:
           retention-days: 30
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@e79a6962e0d4c0c17b229090214935d2e33f8354 # ratchet:codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.out
@@ -83,7 +83,7 @@ jobs:
           fail_ci_if_error: false
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@ba3875ecf642b2129de2b589510c81a8b53dbf4e # ratchet:SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -95,12 +95,12 @@ jobs:
     permissions:
       contents: read
     container:
-      image: golang:1.26-trixie
+      image: index.docker.io/library/golang@sha256:0f6b034c99663ea8957e7dae99124e37374cbe7fcb5b5646f19b185f8f976279 # ratchet:golang:1.26-trixie
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
 
       - name: Cache Go modules
-        uses: actions/cache@v4
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # ratchet:actions/cache@v5
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -116,12 +116,12 @@ jobs:
     permissions:
       contents: read
     container:
-      image: golang:1.26-trixie
+      image: index.docker.io/library/golang@sha256:0f6b034c99663ea8957e7dae99124e37374cbe7fcb5b5646f19b185f8f976279 # ratchet:golang:1.26-trixie
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
 
       - name: Cache Go modules
-        uses: actions/cache@v4
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # ratchet:actions/cache@v5
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}

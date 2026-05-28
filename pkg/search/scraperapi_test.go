@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 const scraperAPIEngineGoogle = "google"

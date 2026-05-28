@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ioplane/scrapedoctl/internal/ui"
+	"github.com/mr-pmillz/scrapedoctl/internal/ui"
 )
 
 func TestSetCustomHelp(t *testing.T) {

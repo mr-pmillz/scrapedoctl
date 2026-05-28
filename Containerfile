@@ -9,9 +9,9 @@ FROM ${BASE_IMAGE} AS builder
 # OCI Image Annotations
 LABEL org.opencontainers.image.title="scrapedoctl" \
       org.opencontainers.image.description="Go 1.26 based MCP CLI server for Scrape.do" \
-      org.opencontainers.image.source="https://github.com/ioplane/scrapedoctl" \
+      org.opencontainers.image.source="https://github.com/mr-pmillz/scrapedoctl" \
       org.opencontainers.image.authors="Your Name <your.email@example.com>" \
-      org.opencontainers.image.vendor="ioplane" \
+      org.opencontainers.image.vendor="mr-pmillz" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.base.name="docker.io/library/oraclelinux:10"
 
@@ -72,9 +72,9 @@ ARG BUILD_DATE=unknown
 RUN if [ -f cmd/scrapedoctl/main.go ]; then \
     CGO_ENABLED=0 go build -trimpath \
     -ldflags="-s -w \
-      -X github.com/ioplane/scrapedoctl/internal/version.Version=${VERSION} \
-      -X github.com/ioplane/scrapedoctl/internal/version.GitCommit=${GIT_COMMIT} \
-      -X github.com/ioplane/scrapedoctl/internal/version.BuildDate=${BUILD_DATE}" \
+      -X github.com/mr-pmillz/scrapedoctl/internal/version.Version=${VERSION} \
+      -X github.com/mr-pmillz/scrapedoctl/internal/version.GitCommit=${GIT_COMMIT} \
+      -X github.com/mr-pmillz/scrapedoctl/internal/version.BuildDate=${BUILD_DATE}" \
     -o /bin/scrapedoctl ./cmd/scrapedoctl; fi
 
 # ---------------------------------------------------------

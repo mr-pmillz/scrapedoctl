@@ -21,7 +21,7 @@ GUID = '46c76871-3d90-4cd5-a970-ad7869c5d086'
 Author = 'Pavel Lavrukhin'
 
 # Company or vendor of this module
-CompanyName = 'ioplane'
+CompanyName = 'mr-pmillz'
 
 # Copyright statement for this module
 Copyright = '(c) Pavel Lavrukhin. All rights reserved.'

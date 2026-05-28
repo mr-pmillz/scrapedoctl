@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ioplane/scrapedoctl/pkg/search"
+	"github.com/mr-pmillz/scrapedoctl/pkg/search"
 )
 
 func ExampleNewRouter() {

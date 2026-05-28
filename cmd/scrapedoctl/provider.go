@@ -10,7 +10,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ioplane/scrapedoctl/internal/config"
+	"github.com/mr-pmillz/scrapedoctl/internal/config"
 )
 
 // knownProviders maps provider names to their default engines.
