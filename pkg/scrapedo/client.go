@@ -48,6 +48,9 @@ type ScrapeRequest struct {
 	Device string
 	// Method is the HTTP method: "GET" (default), "POST", "PUT", etc.
 	Method string
+	// Output selects the response format. Empty defaults to "markdown".
+	// Common values: "markdown", "raw" (the unmodified HTML from the target).
+	Output string
 	// Headers are custom HTTP headers to be forwarded.
 	Headers map[string]string
 	// Body is the data to be sent for POST/PUT requests.
@@ -202,7 +205,11 @@ func (c *Client) prepareQueryParams(req ScrapeRequest) (url.Values, error) {
 	q := url.Values{}
 	q.Set("token", c.token)
 	q.Set("url", req.URL)
-	q.Set("output", "markdown")
+	output := req.Output
+	if output == "" {
+		output = "markdown"
+	}
+	q.Set("output", output)
 
 	if req.Render {
 		q.Set("render", "true")

@@ -136,6 +136,50 @@ func TestScrape_Success(t *testing.T) {
 	assert.Equal(t, expectedResponse, result)
 }
 
+func TestScrape_OutputOverride(t *testing.T) {
+	t.Parallel()
+
+	t.Run("default is markdown", func(t *testing.T) {
+		t.Parallel()
+		var gotOutput string
+		server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			gotOutput = r.URL.Query().Get("output")
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte("ok"))
+		}))
+		defer server.Close()
+
+		client, _ := scrapedo.NewClient("token")
+		setBaseURL(client, server.URL)
+
+		_, err := client.Scrape(context.Background(), scrapedo.ScrapeRequest{URL: "https://example.com"})
+		require.NoError(t, err)
+		assert.Equal(t, "markdown", gotOutput)
+	})
+
+	t.Run("raw output forwards verbatim", func(t *testing.T) {
+		t.Parallel()
+		var gotOutput string
+		server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			gotOutput = r.URL.Query().Get("output")
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte("<html>raw</html>"))
+		}))
+		defer server.Close()
+
+		client, _ := scrapedo.NewClient("token")
+		setBaseURL(client, server.URL)
+
+		body, err := client.Scrape(context.Background(), scrapedo.ScrapeRequest{
+			URL:    "https://example.com",
+			Output: "raw",
+		})
+		require.NoError(t, err)
+		assert.Equal(t, "raw", gotOutput)
+		assert.Equal(t, "<html>raw</html>", body)
+	})
+}
+
 func TestScrape_Failures(t *testing.T) {
 	t.Parallel()
 
